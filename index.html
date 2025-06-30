@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="nav">
+                <div class="close">
+                    <img src="svg/close.svg" alt="">
+                </div>
+                <img class="logo" src="svg/logo.svg" alt="logo">
+                <ul>
+                    <li class="main font"><img src="svg/home.svg" alt="home">Home</li>
+                    <li class="font"><img src="svg/search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+            <div class="library">
+                <div class="libraryhead">
+                    <div class="min">
+                        <img class="a" src="svg/library.svg" alt="bookshelf">
+                        <div class="fonthead">Your Library</div>
+                    </div>
+                    <img class="plus a" src="svg/plus.svg" alt="svg">
+                </div>
+                <div class="librarymain">
+                    <ul>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="footer">
+                    <ul>
+                        <li>Legal</li>
+                        <li>Safety&PrivacyCenter</li>
+                        <li>Privacy Policy</li>
+                        <li>Cookies</li>
+                        <li>AboutAds</li>
+                        <li>Accessibility</li>
+                        <li class="db">Cookies</li>
+                    </ul>
+                    <!-- <div class="cookies">Cookies</div> -->
+                    <button class="language"><img src="svg/globe.svg" alt="globe">English</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="rightnav">
+
+                <div class="navbtnleft">
+                    <div class="hamburgerContainer"><img class="hamburger" src="svg/hamburger.svg" alt=""></div>
+                    <button class="leftarrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27"
+                            height="27" color="#000000" fill="none">
+                            <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="rightarrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27"
+                            height="27" color="#000000" fill="none">
+                            <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="navbtnright">
+                    <button class="signup font">Sign up</button>
+                    <div class="log">
+                        <button class="login font">Log in</button>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-container">
+                <div class="rightheader">
+                    <h1>Spotify Playlist</h1>
+                </div>
+                <div class="rightbottom">
+                    <!-- <div class="rightheader">
+                        <h1>Spotify Playlist</h1>
+                    </div> -->
+
+                    <div class="rightmain">
+
+                    </div>
+                </div>
+                <div class="topParent">
+                    <div class="parent">
+                        <div class="playarea">
+                            <div class="playingSongInfo"></div>
+                            <div class="p1p">
+                                <img class="playprevious img " src="svg/playprevious.svg" alt="">
+                                <img class="play img" src="svg/play.svg" alt="">
+                                <img class="playnext img " src="svg/playnext.svg" alt="">
+                            </div>
+                            <div class="songTimeAndVolume">
+                                <div class="songTime"></div>
+                                <div class="volume"><img class="img" src="svg/volume.svg" alt=""></div>
+                                <input type="range" class="range" min="0" max="100" value="50">
+                            </div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="circle"></div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <script src="src.js"></script>
+</body>
+
+</html>

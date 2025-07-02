@@ -434,9 +434,9 @@ ul {
     height: 10px;
     background-color: white;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
     bottom: 4px;
-    left: 1%;
+    left: 0%;
     transition: left 0.25s;
 }
 
@@ -621,14 +621,14 @@ ul {
         height: 10px;
         background-color: white;
         border-radius: 50%;
-        position: absolute;
-        bottom: 4px;
-        left: 3%;
+     position: relative;
+        left: 0%;
+        bottom: 13px;
 
     }
 
     .line {
-
+   position: absolute;
         width: 92.5vw;
     }
 
@@ -641,9 +641,6 @@ ul {
         display: block;
     }
 
-    /* .footer{
-    display: none;
-} */
     .library {
         margin-top: 1px;
     }
@@ -738,6 +735,7 @@ ul {
 }
 
 @media (max-width: 502px) {
+    
     .signup {
         display: none;
     }
@@ -762,9 +760,6 @@ ul {
 
     }
 }
-
-
-
 .left {
     width: 25vw;
     background: #000;

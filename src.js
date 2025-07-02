@@ -4,10 +4,9 @@ let currentSong = new Audio();
 
 let songs;
 let currFolder;
- function getsongs(folder) {
+async function getsongs(folder) {
     currFolder = folder;
-    // let a = await fetch(`https://spotify2clone-365.netlify.app/${folder}/`)
-    let a = await fetch(`/Spotify-clone/${folder}/`);
+    let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/${folder}/`)
     let response = await a.text();
     // console.log(response)
     let div = document.createElement("div")
@@ -68,7 +67,7 @@ let currFolder;
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/${currFolder}/` + track
+    currentSong.src = `/Spotify-clone/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         document.querySelector(".play").src = "svg/paused.svg"
@@ -123,13 +122,16 @@ async function displayAlbums(folder) {
 
         if (e.href.includes("/songs")) {
             let folders = e.href
-            let folder = folders.split('songs/')[1];
+            let folder = folders.split('songs/')[1]; 
+            folder = folder && folder.replace(/\/$/, ""); //
+            //  Remove trailing slash if exists
+            if(!folder) continue;
             try {
-                let a = await fetch(`https://127.0.0.1:5500/Spotify-clone/songs/${folder}/info.json`)
+                let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/songs/${folder}/info.json`)
                 let response = await a.json();
 
                 playlist1.innerHTML = playlist1.innerHTML + `<div data-folder="${folder}" class="playlist1">
-                        <img src="/songs/${folder}/cover.jpg" alt="img">
+                        <img src="http://127.0.0.1:5500/Spotify-clone/songs/${folder}/cover.jpg" alt="img">
                         <p class="p1"> ${response.title}</p>
                         <p class="p2">${response.description}</p>
                         <div class="playbutton">
@@ -172,7 +174,7 @@ async function main() {
     Array.from(document.querySelector(".librarymain").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", elements => {
             let play = document.querySelector(".play")
-            play.src = "paused.svg"
+            play.src = "svg/paused.svg"
         })
 
     });
@@ -200,11 +202,13 @@ async function main() {
         const duration = Math.floor(currentSong.duration);
         document.querySelector(".songTime").innerHTML = `${convertSecondsToMinSec(currentTime)}/${convertSecondsToMinSec(duration)}`
 
-        document.querySelector(".circle").style.left = (currentTime / duration) * 98 + "%";
+        document.querySelector(".circle").style.left =
+        
+        (currentTime / duration) * 99 + "%";
 
     })
     document.querySelector(".line").addEventListener("click", (e) => {
-        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 98
+        let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 99
         document.querySelector(".circle").style.left = percent + "%";
         currentSong.currentTime = ((currentSong.duration) * percent) / 100
     })
